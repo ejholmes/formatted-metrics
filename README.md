@@ -21,7 +21,7 @@ Get your [Heroku Formatted Metrics](https://devcenter.heroku.com/articles/log-ru
 
    ```bash
    heroku drains:add \
-    "$(iron_worker webhook Logs | tail -n 1 | sed 's/^ *//g')&librato_user=<librato email>&librato_token=<librato token>"
+     "$(iron_worker webhook Logs | tail -n 1 | sed 's/^ *//g')&librato_user=<librato email>&librato_token=<librato token>"
    ```
 
 3. Make sure you have `log-runtime-metrics` enabled

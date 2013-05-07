@@ -1,3 +1,5 @@
 runtime 'ruby'
 
 gem 'librato-metrics'
+
+exec 'logs.rb'
