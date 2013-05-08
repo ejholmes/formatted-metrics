@@ -20,7 +20,7 @@ Get your [Heroku Formatted Metrics](https://devcenter.heroku.com/articles/log-ru
 2. Upload the worker
 
    ```bash
-   iron_worker upload -n Logs \
+   iron_worker upload -n Logs -c '{"librato_user": "<your email>", "librato_token": "<your token>" }' \
      --worker-config https://github.com/ejholmes/formatted-metrics/logs.worker
    ```
 
@@ -28,7 +28,7 @@ Get your [Heroku Formatted Metrics](https://devcenter.heroku.com/articles/log-ru
 
    ```bash
    heroku drains:add \
-     "$(iron_worker webhook Logs | tail -n 1 | sed 's/^ *//g')&librato_user=<librato email>&librato_token=<librato token>"
+     "$(iron_worker webhook Logs | tail -n 1 | sed 's/^ *//g')
    ```
 
 4. Make sure you have `log-runtime-metrics` enabled
