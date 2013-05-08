@@ -20,7 +20,7 @@ Get your [Heroku Formatted Metrics](https://devcenter.heroku.com/articles/log-ru
 2. Upload the worker
 
    ```bash
-   iron_worker upload -n Logs -c '{"librato_user": "<your email>", "librato_token": "<your token>" }' \
+   iron_worker upload -n Logs --config '{"librato_user": "<your email>", "librato_token": "<your token>" }' \
      --worker-config https://github.com/ejholmes/formatted-metrics/logs.worker
    ```
 
